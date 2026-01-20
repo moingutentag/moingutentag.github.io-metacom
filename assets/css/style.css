@@ -42,9 +42,8 @@
         max-width: 100vw !important;
         z-index: 999999 !important;
     }
-    /* ULTIMATIVER MOBILE FIX */
+}
+/* ULTIMATIVER MOBILE FIX */
 #google_translate_element * { max-width: 100vw !important; }
 .goog-te-gadget * { max-width: 100vw !important; }
 body { overflow-x: hidden !important; }
-
-}

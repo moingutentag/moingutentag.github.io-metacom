@@ -2,25 +2,61 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Metacom</title>
     <meta charset="utf-8">
+    <style>
+        body { 
+            font-family: Arial; 
+            max-width: 800px; 
+            margin: auto; 
+            padding: 20px; 
+            overflow-x: hidden;
+        }
+        /* MOBILE GOOGLE TRANSLATE FIX */
+        #google_translate_element {
+            max-width: 140px !important;
+            float: right;
+            margin: 10px;
+        }
+        .goog-te-gadget {
+            max-width: 140px !important;
+            width: 100% !important;
+        }
+        .goog-te-gadget .goog-te-combo {
+            font-size: 13px !important;
+            width: 100% !important;
+            padding: 4px !important;
+        }
+        @media (max-width: 768px) {
+            #google_translate_element {
+                float: none !important;
+                display: block;
+                max-width: 100% !important;
+                margin: 10px auto !important;
+            }
+            .goog-te-gadget .goog-te-combo {
+                font-size: 12px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="google_translate_element"></div>
+    
+    <h1>Translation</h1>
+    <p>Dear parents, <br>
+      We have new symbols in the daycare center! The pictures are there to help us communicate better with the children. <br>
+      They are special pictures called "Metacom." The pictures are designed for communication, which is why they are very easy to understand.
+      The pictures are the same in all groups. Each employee also carries small versions of the pictures with them. Many schools use them as well. We hope that the children will soon become familiar with the pictures.
+      If you would like to have the pictures at home, please contact the office! We will be happy to provide you with prints.</p>
+    <p><strong>Hinweis:</strong> Select language in the top right corner.</p>
+
+    <!-- Google Translate Script HIER (NACH DIV!) -->
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script>
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({pageLanguage: 'de', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
         }
     </script>
-    <style> body { font-family: Arial; max-width: 800px; margin: auto; padding: 20px; } </style>
-</head>
-<body>
-    <div id="google_translate_element" style="float:right;"></div>
-    <h1>Translation</h1>
-    <p>Dear parents, <br>
-      We have new symbols in the daycare center! The pictures are there to help us communicate better with the children. <br>
-      They are special pictures called “Metacom.” The pictures are designed for communication, which is why they are very easy to understand.
-      The pictures are the same in all groups. Each employee also carries small versions of the pictures with them. Many schools use them as well. We hope that the children will soon become familiar with the pictures.
-      If you would like to have the pictures at home, please contact the office! We will be happy to provide you with prints.</p>
-    <p><strong>Hinweis:</strong> Select language in the top right corner.</p>
 </body>
 </html>

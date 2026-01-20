@@ -10,38 +10,35 @@
             max-width: 800px; 
             margin: auto; 
             padding: 20px; 
-            overflow-x: hidden;
         }
-        /* MOBILE GOOGLE TRANSLATE FIX */
-        #google_translate_element {
-            max-width: 140px !important;
-            float: right;
-            margin: 10px;
+        .translate-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4285f4;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 14px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
-        .goog-te-gadget {
-            max-width: 140px !important;
-            width: 100% !important;
-        }
-        .goog-te-gadget .goog-te-combo {
-            font-size: 13px !important;
-            width: 100% !important;
-            padding: 4px !important;
+        .translate-btn:hover {
+            background: #3367d6;
         }
         @media (max-width: 768px) {
-            #google_translate_element {
-                float: none !important;
-                display: block;
-                max-width: 100% !important;
-                margin: 10px auto !important;
-            }
-            .goog-te-gadget .goog-te-combo {
-                font-size: 12px !important;
+            .translate-btn {
+                top: 10px;
+                right: 10px;
+                padding: 8px 12px;
+                font-size: 12px;
             }
         }
     </style>
 </head>
 <body>
-    <div id="google_translate_element"></div>
+    <a href="#" onclick="openTranslate()" class="translate-btn">🌐 Übersetzen</a>
     
     <h1>Translation</h1>
     <p>Dear parents, <br>
@@ -49,14 +46,14 @@
       They are special pictures called "Metacom." The pictures are designed for communication, which is why they are very easy to understand.
       The pictures are the same in all groups. Each employee also carries small versions of the pictures with them. Many schools use them as well. We hope that the children will soon become familiar with the pictures.
       If you would like to have the pictures at home, please contact the office! We will be happy to provide you with prints.</p>
-    <p><strong>Hinweis:</strong> Select language in the top right corner.</p>
+    <p><strong>Hinweis:</strong> Klicke auf den blauen Button oben rechts.</p>
 
-    <!-- Google Translate Script HIER (NACH DIV!) -->
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script>
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'de', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-        }
+    function openTranslate() {
+        const url = 'https://translate.google.com/translate?sl=de&tl=auto&u=' + encodeURIComponent(window.location.href);
+        window.open(url, 'translate', 'width=800,height=600,scrollbars=yes,resizable=yes');
+        return false;
+    }
     </script>
 </body>
 </html>

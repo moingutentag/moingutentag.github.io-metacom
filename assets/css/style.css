@@ -1,0 +1,21 @@
+/* Google Translate Widget responsiv machen */
+#google_translate_element,
+.goog-te-gadget,
+.goog-te-gadget .goog-te-combo {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Dropdown etwas kompakter */
+.goog-te-gadget .goog-te-combo {
+    font-size: 14px;
+}
+
+/* Für Handybreite weiter anpassen */
+@media (max-width: 480px) {
+  .goog-te-gadget .goog-te-combo {
+      font-size: 13px;
+      padding-right: 20px;
+  }
+}

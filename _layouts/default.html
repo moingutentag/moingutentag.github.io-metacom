@@ -4,29 +4,29 @@
   <meta charset="utf-8">
   <title>{{ page.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  <style>
-    /* INLINE CSS - überschreibt ALLES */
-    #google_translate_element iframe { max-width: 100vw !important; }
-    .goog-te-menu-frame { max-width: 100vw !important; width: 100vw !important; }
-  </style>
 </head>
 <body>
-  <!-- MINIATURE Widget nur für Mobile -->
-  <div style="max-width: 120px; margin: 10px;">
-    <div id="google_translate_element"></div>
+  <!-- CUSTOM TRANSLATE BUTTON - KEIN iframe Chaos! -->
+  <div style="max-width: 150px; margin: 10px;">
+    <select onchange="translatePage(this.value)" 
+            style="width:100%; padding:8px; font-size:14px; border:1px solid #ccc; border-radius:4px;">
+      <option value="">🇩🇪 Deutsch</option>
+      <option value="en">🇺🇸 English</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="es">🇪🇸 Español</option>
+      <option value="it">🇮🇹 Italiano</option>
+    </select>
   </div>
   
   {{ content }}
   
   <script>
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'de',
-      includedLanguages: 'de,en,fr,es,it', // Weniger Sprachen = kleineres Dropdown
-      layout: google.translate.TranslateElement.InlineLayout.DROPDOWN
-    }, 'google_translate_element');
+  function translatePage(lang) {
+    if(lang) {
+      const url = 'https://translate.google.com/translate?sl=de&tl='+lang+'&u='+encodeURIComponent(location.href)+'&op=translate';
+      window.open(url, '_blank');
+    }
   }
   </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

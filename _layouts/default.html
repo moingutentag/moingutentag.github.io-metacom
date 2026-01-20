@@ -6,27 +6,15 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-  <!-- CUSTOM TRANSLATE BUTTON - KEIN iframe Chaos! -->
+  <!-- EINZIGER BUTTON - 100% MOBIL -->
   <div style="max-width: 150px; margin: 10px;">
-    <select onchange="translatePage(this.value)" 
-            style="width:100%; padding:8px; font-size:14px; border:1px solid #ccc; border-radius:4px;">
-      <option value="">🇩🇪 Deutsch</option>
-      <option value="en">🇺🇸 English</option>
-      <option value="fr">🇫🇷 Français</option>
-      <option value="es">🇪🇸 Español</option>
-      <option value="it">🇮🇹 Italiano</option>
-    </select>
+    <a href="https://translate.google.com/translate?sl=de&u={{ page.url | absolute_url | cgi_escape }}" 
+       target="_blank" 
+       style="display: inline-block; padding: 8px 12px; background: #4285f4; color: white; text-decoration: none; border-radius: 4px; font-size: 14px; text-align: center; width: 100%; box-sizing: border-box;">
+      🌐 Übersetzen
+    </a>
   </div>
   
   {{ content }}
-  
-  <script>
-  function translatePage(lang) {
-    if(lang) {
-      const url = 'https://translate.google.com/translate?sl=de&tl='+lang+'&u='+encodeURIComponent(location.href)+'&op=translate';
-      window.open(url, '_blank');
-    }
-  }
-  </script>
 </body>
 </html>
